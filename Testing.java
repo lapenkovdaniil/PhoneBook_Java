@@ -54,14 +54,14 @@ class Testing {
     }
     @Test
     public void delNumber() {
-        numbersOfPhone.add("+79214190709");
+        numbersOfPhone.add("+79214190708");
         map.put("Daniel", numbersOfPhone);
         pb.addContact("Daniel");
-        pb.addNumber("Daniel", "+79214190709");
         pb.addNumber("Daniel", "+79214190708");
-        assertEquals(map, pb.delNumber("Daniel", "+79214190708"));
-        assertThrows(IllegalArgumentException.class, () -> pb.delNumber("Daniel", "+79214190708"));
-        assertThrows(IllegalArgumentException.class, () -> pb.delNumber("Kris", "+79214190709"));
+        pb.addNumber("Daniel", "+79214190709");
+        assertEquals(map, pb.delNumber("Daniel", "+79214190709"));
+        assertThrows(IllegalArgumentException.class, () -> pb.delNumber("Daniel", "+79214190709"));
+        assertThrows(IllegalArgumentException.class, () -> pb.delNumber("Kris", "+79214190708"));
     }
 
 
