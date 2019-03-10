@@ -25,10 +25,10 @@ class Testing {
     public void getContact() {
         contactList.add("Daniel");
         pb.addContact("Daniel");
-        pb.addNumber("Daniel", "79214190709");
-        pb.addNumber("Daniel", "79214190708");
-        assertEquals(contactList, pb.getContact("79214190709"));
-        assertEquals(contactList, pb.getContact("79214190708"));
+        pb.addNumber("Daniel", "+79214190709");
+        pb.addNumber("Daniel", "+79214190708");
+        assertEquals(contactList, pb.getContact("+79214190709"));
+        assertEquals(contactList, pb.getContact("+79214190708"));
     }
     @Test
     public void addContact(){
