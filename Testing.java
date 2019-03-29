@@ -1,15 +1,18 @@
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class Testing {
     // Проверять по очереди
-    HashMap<String, ArrayList<String>> map = new HashMap<>();
+    Map<String, List<String>> map = new HashMap<>();
     Phonebook pb = new Phonebook();
-    ArrayList<String> numbersOfPhone = new ArrayList<>();
-    ArrayList<String> contactList = new ArrayList<>();
+    List<String> numbersOfPhone = new ArrayList<>();
+    List<String> contactList = new ArrayList<>();
 
     @Test
     public void getNumbers() {
