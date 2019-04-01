@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class Testing {
-    // Проверять по очереди
     Map<String, List<String>> map = new HashMap<>();
     Phonebook pb = new Phonebook();
     List<String> numbersOfPhone = new ArrayList<>();
