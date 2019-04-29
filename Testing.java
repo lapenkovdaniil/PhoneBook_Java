@@ -13,6 +13,7 @@ class Testing {
     List<String> numbersOfPhone = new ArrayList<>();
     List<String> contactList = new ArrayList<>();
 
+
     @Test
     public void getNumbers() {
         contactList.add("+79214190709");

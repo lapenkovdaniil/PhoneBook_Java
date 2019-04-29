@@ -3,20 +3,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class Phonebook {
+public class Phonebook {
     private  Map<String, List<String>> pb = new HashMap<>();
-    List<String> getNumber(String name){
+    public List<String> getNumber(String name){
         if (!this.pb.containsKey(name)) throw new IllegalArgumentException("Контакт" + name + " не существует");
         return this.pb.get(name);
+
     }
     List<String> getContact(String phone) {
-        List<String> contactList = new ArrayList<String>() {};
-        for (Map.Entry<String, List<String>> entry : this.pb.entrySet()) {
-            String key = entry.getKey();
-            List<String> value = entry.getValue();
-            if (value.contains(phone)) contactList.add(key);
-        }
-        return contactList;
+        List<String> tempPeople = new ArrayList<String>() {};
+        this.pb.forEach((key, value) -> {if (value.contains(phone)) tempPeople.add(key);});
+        return tempPeople;
     }
     Map<String, List<String>> addContact(String name){
         if(this.pb.containsKey(name))throw new IllegalArgumentException("Контакт" + name + " уже существует");
@@ -34,7 +31,7 @@ class Phonebook {
         if (!phone.matches("^[0-9+*#/-]+")) throw new IllegalArgumentException("Неверный формат номера");
         List<String> contactList = this.pb.get(name);
         if (contactList.contains(phone)) throw new IllegalArgumentException("Номер" + phone + " уже существует");
-        this.pb.get(name).add(phone);
+        contactList.add(phone);
         return this.pb;
     }
     Map<String, List<String>> delNumber(String name, String phone){
@@ -42,7 +39,7 @@ class Phonebook {
         List<String> contactList = this.pb.get(name);
         if (!contactList.contains(phone)) throw new IllegalArgumentException("Номер " + phone + " не существует");
         contactList.remove(phone);
-        this.pb.put(name,contactList);
+        pb.put(name,contactList);
         return this.pb;
     }
 }
